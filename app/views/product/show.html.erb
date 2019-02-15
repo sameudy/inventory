@@ -1,0 +1,27 @@
+<article>
+	<header>
+		<h1><%= @product.name %></h1>
+	</header>
+	<h2>Price</h2>
+	<p>
+		<%= format_price(@product) %>
+	</p>
+	<h2>Description</h2>
+	<p>
+		<%= @product.description %>
+	</p>
+	<h3>Rating</h3>
+	<p>
+		<%= @product.rating %>
+	</p>
+	<h3>Imported On</h3>
+	<p>
+		<%= @product.imported_on %>
+	</p>
+	<nav>
+		<%= link_to("All Product", root_path) %>
+		<%= link_to("Edit", edit_product_path(@product)) %>
+		<%=  link_to "Delete", product_path(@product), method: :delete, data: {confirm:"Are you sure?"} %>	
+	</nav>
+	
+</article>

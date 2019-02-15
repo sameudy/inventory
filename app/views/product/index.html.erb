@@ -1,0 +1,16 @@
+<h1><%= pluralize(@products.size, 'Product') %></h1>
+	<%= link_to("Add New Product", products_new_path) %>
+<ul>
+<% @products.each do |product| %>
+  <li><strong><%= link_to(product.name, product_path(product))%></strong>
+  			 	<p><%= truncate(product.description, length: 30, separator: '' )%></p>
+  			 	
+  			 	<p>(<%=product.rating %>)</p>
+
+  				<p><%= format_price(product) %></p>
+
+  				<p><%= product.imported_on %> </p>
+
+  </li>
+<% end %>
+</ul>
